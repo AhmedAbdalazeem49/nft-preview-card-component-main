@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--main-bg);
+}
+
+.card {
+  display: flex;
+  max-width: 300px;
+  flex-direction: column;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: var(--card-bg);
+  box-shadow: 0px 0px 20px var(--card-bg)
+}
+
+.card .image {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.card .image img.one {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.image div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(178, 100%, 50%, 0.233);
+  opacity: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.image div img {
+  width: 100px;
+  height: auto;
+}
+
+.image:hover div {
+  opacity: 1;
+  border-radius: 10px;
+}
+
+.image div img{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+
+.card .info {
+  margin-top: 10px;
+}
+
+.info h4 {
+  color: var(--white);
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.info h4:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+.info p.description {
+  color: var(--soft-blue);
+  margin-bottom: 15px;
+}
+
+.info .sub-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.sub-info p:first-child {
+  color: var(--cyan);
+}
+
+.sub-info p:last-child {
+  color: var(--soft-blue)
+}
+
+.sub-info p:first-child img,
+.sub-info p:last-child img {
+  margin-right: 5px;
+  margin-bottom: -2px;
+}
+
+.info hr {
+  background-color: var(--line);
+  margin-bottom: 10px;
+  border: none;
+  height: 1px;
+}
+
+.footer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  object-fit: cover;
+}
+
+.footer p {
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.footer p:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+.footer span {
+  color: var(--soft-blue);
+}
